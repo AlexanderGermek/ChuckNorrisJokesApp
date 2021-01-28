@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t8V-86-7pb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chuck Norris Jokes-->
+        <scene sceneID="j1z-LZ-s3X">
+            <objects>
+                <viewController title="Chuck Norris Jokes" id="spT-xO-0Cp" customClass="JokesViewController" customModule="AGChuckNorris" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOX-CV-SbL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E8v-yb-FEZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="575"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="joke_cell" id="v1Y-72-yBj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v1Y-72-yBj" id="6YK-ay-wUL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="spT-xO-0Cp" id="j6T-0g-XDH"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="1Rt-el-twX">
+                                <rect key="frame" x="171" y="400" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="color" systemColor="systemIndigoColor"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hu-7o-cbl">
+                                <rect key="frame" x="0.0" y="663" width="414" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="z0g-Xd-GyH">
+                                        <rect key="frame" x="107" y="92" width="200" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="LOAD"/>
+                                        <connections>
+                                            <action selector="actionLoadButton:" destination="spT-xO-0Cp" eventType="touchUpInside" id="P7b-Rr-8xh"/>
+                                            <action selector="loadButtonAction:" destination="z38-EM-UeH" eventType="touchUpInside" id="DMf-QO-N7n"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="250" minValue="1" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="Ht0-eV-yyd">
+                                        <rect key="frame" x="6" y="8" width="402" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="spT-xO-0Cp" eventType="valueChanged" id="PTB-lx-2QJ"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Byv-RT-wMT">
+                                        <rect key="frame" x="107" y="55" width="200" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="nLE-ud-E9h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fls-6F-4sx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E8v-yb-FEZ" firstAttribute="top" secondItem="Fls-6F-4sx" secondAttribute="top" id="2p0-74-xfE"/>
+                            <constraint firstItem="0hu-7o-cbl" firstAttribute="top" secondItem="E8v-yb-FEZ" secondAttribute="bottom" id="Fn8-8n-s38"/>
+                            <constraint firstItem="E8v-yb-FEZ" firstAttribute="leading" secondItem="Fls-6F-4sx" secondAttribute="leading" id="IK9-29-L4X"/>
+                            <constraint firstItem="0hu-7o-cbl" firstAttribute="bottom" secondItem="Fls-6F-4sx" secondAttribute="bottom" id="S6A-Py-LFX"/>
+                            <constraint firstItem="E8v-yb-FEZ" firstAttribute="trailing" secondItem="Fls-6F-4sx" secondAttribute="trailing" id="SwT-Sw-Ccr"/>
+                            <constraint firstItem="0hu-7o-cbl" firstAttribute="trailing" secondItem="Fls-6F-4sx" secondAttribute="trailing" id="Z8f-ft-f2H"/>
+                            <constraint firstItem="0hu-7o-cbl" firstAttribute="leading" secondItem="Fls-6F-4sx" secondAttribute="leading" id="yYU-0j-A1w"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Jokes" image="circle" catalog="system" id="mr7-Br-wpO"/>
+                    <navigationItem key="navigationItem" title="Chuck Norris Jokes" id="XzQ-tq-zs5"/>
+                    <connections>
+                        <outlet property="indicator" destination="1Rt-el-twX" id="N3o-fK-c3W"/>
+                        <outlet property="jokesCountLabel" destination="Byv-RT-wMT" id="nT1-tq-hkg"/>
+                        <outlet property="jokesCountSlider" destination="Ht0-eV-yyd" id="nYO-dJ-V6B"/>
+                        <outlet property="jokesTableView" destination="E8v-yb-FEZ" id="wuU-f8-2JC"/>
+                        <outlet property="loadJokesButton" destination="z0g-Xd-GyH" id="nzp-de-r68"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OM-Vt-gdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="z38-EM-UeH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-7049" y="-589"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="59h-b5-T6w">
+            <objects>
+                <tabBarController title="Main Controller" id="t8V-86-7pb" customClass="ViewController" customModule="AGChuckNorris" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Ok-31-Rd7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="D9N-6r-v0B" kind="relationship" relationship="viewControllers" id="VkR-Nd-xkH"/>
+                        <segue destination="xT9-wU-svl" kind="relationship" relationship="viewControllers" id="M3U-3y-rIb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uI8-2A-rwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6362" y="-1925"/>
+        </scene>
+        <!--Chuck Norris API-->
+        <scene sceneID="e0J-va-gji">
+            <objects>
+                <viewController title="Chuck Norris API" id="0qS-9f-YYW" customClass="WebViewController" customModule="AGChuckNorris" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1G0-tU-tIs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nob-op-z7l">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-p5-1bL">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemIndigoColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HIv-jd-Bb5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HIv-jd-Bb5" firstAttribute="trailing" secondItem="Nob-op-z7l" secondAttribute="trailing" id="Gwt-R9-ScD"/>
+                            <constraint firstItem="Nob-op-z7l" firstAttribute="bottom" secondItem="HIv-jd-Bb5" secondAttribute="bottom" id="IdY-O8-3KG"/>
+                            <constraint firstItem="Nob-op-z7l" firstAttribute="top" secondItem="HIv-jd-Bb5" secondAttribute="top" id="MwR-Wm-RAy"/>
+                            <constraint firstItem="B1W-p5-1bL" firstAttribute="centerX" secondItem="1G0-tU-tIs" secondAttribute="centerX" id="WjT-CI-Yaz"/>
+                            <constraint firstItem="B1W-p5-1bL" firstAttribute="centerY" secondItem="1G0-tU-tIs" secondAttribute="centerY" id="cOo-RB-wLo"/>
+                            <constraint firstItem="Nob-op-z7l" firstAttribute="leading" secondItem="HIv-jd-Bb5" secondAttribute="leading" id="sxJ-es-Bba"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="API" image="circle" catalog="system" id="yd5-wc-v2N"/>
+                    <navigationItem key="navigationItem" title="Chuck Norris API" id="Ahk-lB-Q1z"/>
+                    <connections>
+                        <outlet property="indicatorWeb" destination="B1W-p5-1bL" id="u4M-a9-RVR"/>
+                        <outlet property="myWebView" destination="Nob-op-z7l" id="ff2-fC-7AG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQc-IR-Uoa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5755" y="-588"/>
+        </scene>
+        <!--Jokes_Navigation-->
+        <scene sceneID="Cus-BT-8Eo">
+            <objects>
+                <navigationController title="Jokes_Navigation" id="D9N-6r-v0B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Jokes" image="circle" catalog="system" id="KNy-HQ-y3D"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pah-72-ngk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="spT-xO-0Cp" kind="relationship" relationship="rootViewController" id="jcS-ip-FoL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTM-BF-mw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7049" y="-1287"/>
+        </scene>
+        <!--API_Navigation-->
+        <scene sceneID="COm-sI-gIw">
+            <objects>
+                <navigationController title="API_Navigation" id="xT9-wU-svl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="API" image="circle" catalog="system" id="ONf-L0-CQL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZKy-KG-QUw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0qS-9f-YYW" kind="relationship" relationship="rootViewController" id="Cs1-GB-iWQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wk-sx-xrX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5755" y="-1287"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
